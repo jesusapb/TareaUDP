@@ -11,7 +11,7 @@ from tkinter import filedialog as FileDialog
 
 #librerias personales
 from valores import *
-
+from EnvioArchivo import *
 
 # Define la ventana principal de la aplicación
 
@@ -52,10 +52,13 @@ def buscar():
 
 def enviar():
     if direccionIp.get()!="":
-        print(direccionIp.get())
+        val.ubicacionIP=direccionIp.get()
+        print(val.ubicacionIP)
         #print(val.is_valid_ipv4_address(direccionIp.get()))
         if val.is_valid_ipv4_address(direccionIp.get())==True and NomArchivo!="":
             print("direccion valida")
+            s=EnvioArchivo(val.ubicacionIP,val.Archivo)
+            s.Send()
         else:
             print("direccion no valida")
             #aqui debe mandar una alerta de que no se ingreso bien la direccion ip

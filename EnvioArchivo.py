@@ -34,7 +34,7 @@ class EnvioArchivo:
             s.close()
 
 
-a= "127.0.0.1"
-arch="C:\\Users\\japb1\\OneDrive - Universidad Autonoma de Yucatan\\repositorios\\udp\\TareaUDP\\ejemplo.txt"
-ejemplo=EnvioArchivo(a,arch)
-ejemplo.Send()
+#a= "127.0.0.1"
+#arch="C:\\Users\\japb1\\OneDrive - Universidad Autonoma de Yucatan\\repositorios\\udp\\TareaUDP\\ejemplo.txt"
+#ejemplo=EnvioArchivo(a,arch)
+#ejemplo.Send()
