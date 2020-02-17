@@ -47,6 +47,7 @@ def buscar():
     # Nota: falla si no le damos una direccion de Archivo valida
     if val.Archivo !="":
         print(val.Archivo)
+        ResultadoDelEnvio.set("Archivo cargado")
     else:
         print("Dirección de Archivo no válida")
         NomArchivo.set("")
@@ -80,13 +81,14 @@ def enviar():
 def borrartodo():
     direccionIp.set("")
     NomArchivo.set("")
+    ResultadoDelEnvio.set("")
 
 
 
 
 
 
-TituloEtiquita = Label(frame1,text="Envio de archivo").pack()
+TituloEtiquita = Label(frame1,text="Envio de archivos").pack()
 Espacio = Label(frame1).pack()
 ## son los witgests para la caja de la ubicacion del archivo
 BuscarArchCaja = Entry(frame1, textvar=NomArchivo, justify="right", width=40).pack()
@@ -98,9 +100,13 @@ dirccionCaja = ttk.Entry(frame1,textvar= direccionIp ).pack()
 EnviarCaja = Button(frame1, text="Enviar", command=enviar).pack()
 
 Espacio2 = Label(frame1).pack()
-
 #insertar un boton para resetear todo
+#ResEtiquita = Label(frame1,text="Envio de archivos").pack()
 borrarTodoCaja = Button(frame1, text="borrar todo",command=borrartodo).pack()
+
+Espacio3 = Label(frame1).pack()
+Resultado = Label(frame1,textvariable=ResultadoDelEnvio).pack()
+
 
 
 #se debe inserta una caja de texto o una leyenda para notificar el exito de envio o el error
