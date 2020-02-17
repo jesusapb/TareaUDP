@@ -53,7 +53,13 @@ def buscar():
 def enviar():
     if direccionIp.get()!="":
         print(direccionIp.get())
-        print(val.is_valid_ipv4_address(direccionIp.get()))
+        #print(val.is_valid_ipv4_address(direccionIp.get()))
+        if val.is_valid_ipv4_address(direccionIp.get())==True and NomArchivo!="":
+            print("direccion valida")
+        else:
+            print("direccion no valida")
+            #aqui debe mandar una alerta de que no se ingreso bien la direccion ip
+
     else:
         print("caja vacia")
 
