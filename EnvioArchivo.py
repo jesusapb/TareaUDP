@@ -5,6 +5,7 @@ class EnvioArchivo:
 
     target = ""
     file = ""
+    exito = False
 
     def __init__(self,target,file):
         self.target=target
@@ -30,6 +31,7 @@ class EnvioArchivo:
             # "s.sendto()" This method transmits UDP message
             s.sendto(data, (self.target, 50002))
             print("Hecho")
+            self.exito= True
         finally:
             s.close()
 
